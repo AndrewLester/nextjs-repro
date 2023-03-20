@@ -6,11 +6,7 @@ function MyApp({ Component, pageProps }) {
 }
 
 MyApp.getInitialProps = async (ctx) => {
-    const { test } = await fetch(`${process.env.BASE_URL}/api/hello`).then(
-        (res) => res.json()
-    );
-
-    console.log("I'll use this...", test);
+    await fetch(`${process.env.BASE_URL}/api/hello`);
 
     return App.getInitialProps(ctx);
 };
